@@ -1,0 +1,41 @@
+/* LE BLOG */
+
+.blog_container {
+    margin: 0 auto 100px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.title-left_container {
+    text-align: left;
+    padding-top: 120px;
+}
+
+.title-left_container img {
+    width: 100%;
+}
+
+.blog-filter-container {
+    display: flex;
+    background-color: var(--color-white);
+    box-shadow: 0 5px 60px rgba(0, 0, 0, 0.06);
+    border-radius: 15px;
+    width: fit-content;
+}
+
+.blog-filter-container div {
+    padding: 20px 30px;
+}
+
+.blog-filter-container div:first-child {
+    background-color: var(--main-color);
+    border-radius: 15px 0 0 15px;
+}
+
+.list-article_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: ". . .";
+    gap: 20px;
+}

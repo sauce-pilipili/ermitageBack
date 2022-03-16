@@ -1,0 +1,132 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}ERMITAGE{% endblock %}
+
+{% block body %}
+{{ include('_includes/backOffice/_navigation.html.twig') }}
+    <section class="section-content">
+        <div class="content">
+            <div class="content-table">
+                <div class="content-title">
+                    <h1>Les articles</h1>
+                    <form class="form-search" action="">
+                        <input class="form-search_input" type="text" name="" id="" placeholder="Rechercher un article">
+                        <input class="form-search_button" type="button" value="">
+                    </form>
+                </div>
+                <table>
+                    <tbody id="bodyList">
+                    {{ include('categories/_contentCategories.html.twig') }}
+                    </tbody>
+                </table>
+{#                <button id="new">nouveau</button>#}
+                <div id="categorieForm"></div>
+            </div>
+        </div>
+    </section>
+    <script>
+        editCategorie();
+        deleteCategorie();
+        let ajoutCategorie = document.getElementById("new")
+        let div = document.getElementById("categorieForm")
+
+        ajoutCategorie.addEventListener('click', (e) => {
+            e.preventDefault();
+            $.ajax({
+                url: "http://127.0.0.1:8000/admin/categories/new",
+                success: function (data) {
+                    // mise a jour formulaire
+                    remplirmodal(data)
+                    //creation des ecouteurs du formulaire
+                    newSendCategorie();
+
+                }
+            })
+        });
+
+        // ajout d'un ecouteur pour la soumission du formulaire NEW'
+        function newSendCategorie() {
+            formCategorie = document.querySelector('#newcategorie');
+            formCategorie.addEventListener('submit', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "http://127.0.0.1:8000/admin/categories/new",
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+                    data: new FormData(e.target),
+                    success: function (data) {
+                        document.getElementById("bodyList").innerHTML = data.content
+                        editCategorie();
+                        deleteCategorie();
+                        viderForm();
+                    }
+                })
+            });
+        }
+
+        function editCategorie() {
+            let editCategorie = document.querySelectorAll('#categorieEdit');
+            editCategorie.forEach((editCategorie) => {
+                editCategorie.addEventListener('click', () => {
+                    $.ajax({
+                        url: 'http://127.0.0.1:8000/admin/categories/edit/' + editCategorie.value,
+                        success: function (data) {
+                            remplirmodal(data)
+                            editSendCategorie(editCategorie.value)
+                        }
+                    })
+                });
+            })
+        }
+
+        function deleteCategorie() {
+            let deleteC = document.querySelectorAll('#deleteCategorie');
+            deleteC.forEach((deleteC) => {
+                deleteC.addEventListener('click', () => {
+                    console.log(deleteC.value)
+                    $.ajax({
+                        url: 'http://127.0.0.1:8000/admin/categories/delete/' + deleteC.value,
+                        type: 'POST',
+                        success: function (data) {
+                            document.getElementById("bodyList").innerHTML = data.content
+                            deleteCategorie();
+                            viderForm()
+                        }
+                    })
+                });
+            })
+        }
+
+
+        // ajout d'un ecouteur pour la soumission du formulaire EDIT'
+        function editSendCategorie(id) {
+            formCategorie = document.querySelector('#editcategorie');
+            formCategorie.addEventListener('submit', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "http://127.0.0.1:8000/admin/categories/edit/" + id,
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+                    data: new FormData(e.target),
+                    success: function (data) {
+                        document.getElementById("bodyList").innerHTML = data.content
+                        editCategorie();
+                        deleteCategorie();
+                        viderForm()
+                    }
+                })
+            });
+        }
+
+        function remplirmodal(data) {
+            div.innerHTML = "";
+            div.innerHTML = data.content
+        }
+
+        function viderForm(){
+            div.innerHTML="";
+        }
+    </script>
+{% endblock %}

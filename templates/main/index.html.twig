@@ -1,0 +1,191 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'Ermitage Cauderan{% endblock %}
+
+{% block body %}
+{{ include('_includes/navigation.html.twig') }}
+    <main>
+        <div class="col-1">
+            <img src="img/accueil.png" alt="L'Ermitage Caudéran">
+        </div>
+        <div class="col-2">
+            <h1>Restaurant Caudéran</h1>
+            <p>L’Ermitage Caudéran, restaurant familial sur Bordeaux Caudéran</p>
+            <div>
+                <a class="bouton-1" href="carte.html">Voir la carte</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="about_container">
+        <div class="row container-large">
+            <div class="col-1">
+                <h2>L’Ermitage cauderan, un restaurant familial</h2>
+                <p>Pourquoi L’Ermitage ? Nous nous sommes connus dans le restaurant familial. Travail en famille pour l’un, maître d’apprentissage pour l’autre, L’Ermitage est le point de départ de notre histoire commune, comme professionnel, mais aussi comme couple. Le nom est venu naturellement en hommage familial et à notre vécu.</p>
+                <div>
+                    <a class="bouton-1" href="a-propos.html">Qui sommes-nous ?</a>
+                </div>
+            </div>
+            <div class="col-2">
+                <img src="img/qui-sommes-nous.png" alt="Qui sommes-nous ?">
+            </div>
+        </div>
+    </section>
+
+    <section class="card_container container-large reveal">
+        <div class="card_container_intro">
+            <h2>À la carte</h2>
+            <p>Nous vous proposons des entrées, des plats et des desserts de qualité. Nous utilisons des produits frais et locaux afin de vous offrir la meilleur expérience gustative.</p>
+        </div>
+        <div class="card-white_container">
+            <div class="card-white">
+                <img src="img/plat-exemple.png" alt="">
+                <div class="row">
+                    <h3>Gravlax de saumon</h3>
+                    <p>Gravlax de saumon, condiments citron et crème de raifort</p>
+                    <p>10.50 €</p>
+                </div>
+            </div>
+            <div class="card-white">
+                <img src="img/plat-exemple.png" alt="">
+                <div class="row">
+                    <h3>Burger de l’Ermitage (VBF) selon l’inspiration</h3>
+                    <p>Jeunes pousses et frites fraîchest</p>
+                    <p>17.50 €</p>
+                </div>
+            </div>
+            <div class="card-white">
+                <img src="img/plat-exemple.png" alt="">
+                <div class="row">
+                    <h3>Omelette norvegienne</h3>
+                    <p>Omelette norvegienne flambée « devant vous »</p>
+                    <p>8.50 €</p>
+                </div>
+            </div>
+        </div>
+        <div class="button_container">
+            <a class="bouton-1" href="carte.html">Voir toute la carte</a>
+        </div>
+    </section>
+
+    <section class="group_container container-xlarge reveal">
+        <div class="col">
+            <h2>Réservation pour groupes</h2>
+            <p>Repas d’entreprise, repas de fin d’année, anniversaire, communion, quel que soit l’occasion,  nous vous proposons le repas qui va avec. A l’écoute de vos attentes, nous vous proposons un devis personnalisé, pour que votre moment ne soit pas celui d’un autre.</p>
+            <div>
+                <a class="bouton-1" href="groupes.html">En savoir plus</a>
+            </div>
+        </div>
+        <div class="col">
+            <img src="img/reservation-groupes.jpg" alt="Réservation pour les groupes">
+        </div>
+    </section>
+
+    <div class="decoration_container">
+        <img src="img/fond-3.jpg">
+    </div>
+
+    <section class="card_container container-large reveal">
+        <div class="card_container_intro">
+            <h2>L’Ermitage c’est aussi …</h2>
+        </div>
+        <div class="card-white_container">
+            <div class="card-white-2">
+                <div class="row-1">
+                    <img src="img/work-cafe-small.jpg" alt="Work Café">
+                </div>
+                <div class="row-2">
+                    <h3>Work Café</h3>
+                    <p>L’espace Work Café de l’Ermitage Caudéran vous propose un coin cosy pour travailler, boire et manger un morceau entre collègues !</p>
+                    <div>
+                        <a class="bouton-1" href="work-cafe.html">Voir le work café</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-white-2">
+                <div class="row-1">
+                    <img src="img/bar-tapas-small.jpg" alt="Bar à tapas">
+                </div>
+                <div class="row-2">
+                    <h3>Bar Tapas</h3>
+                    <p>L’ermitage Caudéran vous propose des cocktails, des bières, du vin au verre, des boissons fraîches ou chaudes, bref un moment de partage autour d’un verre…</p>
+                    <div>
+                        <a class="bouton-1" href="bar-tapas.html">Voir le bar à tapas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-white-2">
+                <div class="row-1">
+                    <img src="img/restaurant-a-emporter-small.jpg" alt="A emporter">
+                </div>
+                <div class="row-2">
+                    <h3>À emporter</h3>
+                    <p>Votre restaurant familial l’Ermitage Caudéran vous propose de bons plats fait maison à emporter! Réservez, emportez, dégustez !</p>
+                    <div>
+                        <a class="bouton-1" href="#">Voir la carte à emporter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="opinion_container">
+        <div class="col-1">
+            <p>Restaurant de très bonne qualité avec un bon personnel souriant et professionnel et en plus les plats sont de très bonne facture !! Je recommande…</p>
+            <p>Stéphane</p>
+        </div>
+        <div class="col-2">
+            <img src="img/plat-accueil-poke.png" alt="Plat de l'Ermitage caudéran">
+        </div>
+    </div>
+
+    <section class="contact_container">
+        <div class="card-grey_container container-large reveal">
+            <div class="card-grey">
+                <div class="col">
+                    <h2>Nos coordonnées</h2>
+                    <div class="row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18">
+                            <path id="icon" d="M19,18H3a3,3,0,0,1-3-3L.01,3A3,3,0,0,1,3,0H19a3,3,0,0,1,3,3V15A3,3,0,0,1,19,18ZM5,4.143A1,1,0,0,0,4.485,6L11,9.928l.008-.013L17.7,5.858a1,1,0,0,0,.34-1.375,1,1,0,0,0-1.373-.339L10.972,7.573,5.517,4.286A1,1,0,0,0,5,4.143Z" fill="#fff"/>
+                        </svg>
+                        <a href="mailto:lermitagecauderan@gmail.com">lermitagecauderan@gmail.com</a>
+                    </div>
+                    <div class="row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                            <path class="icon" d="M643.62,5155.79a15.151,15.151,0,0,0,6.59,6.59l2.2-2.2a.993.993,0,0,1,1.02-.24,11.4,11.4,0,0,0,3.57.57,1,1,0,0,1,1,1V5165a1,1,0,0,1-1,1,17,17,0,0,1-17-17,1,1,0,0,1,1-1h3.5a1,1,0,0,1,1,1,11.358,11.358,0,0,0,.57,3.57,1,1,0,0,1-.25,1.021l-2.2,2.2Z" transform="translate(-640 -5148)" fill="#fff"/>
+                        </svg>
+                        <a href="tel:+33556081438">05 56 08 14 38</a>
+                    </div>
+                    <div class="row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 14 20">
+                            <path class="icon" d="M7,20H7a45.689,45.689,0,0,1-3.5-4.531C1.9,13.1,0,9.712,0,7A7,7,0,0,1,11.951,2.049,6.953,6.953,0,0,1,14,7c0,2.712-1.9,6.1-3.5,8.468A45.694,45.694,0,0,1,7,20ZM7,4.5A2.5,2.5,0,1,0,9.5,7,2.5,2.5,0,0,0,7,4.5Z" transform="translate(0 0)" fill="#fff"/>
+                        </svg>
+                        <a href="">341 Avenue du Maréchal de Lattre de Tassigny 33200 Bordeaux</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-grey">
+                <div>
+                    <h2>Nos horaires</h2>
+                    <div>
+                        <p>Lundi <span>08:30–00:00</span></p>
+                        <p>Mardi <span>08:30–00:00</span></p>
+                        <p>Mercredi <span>08:30–00:00</span></p>
+                        <p>Jeudi <span>08:30–00:00</span></p>
+                        <p>Vendredi <span>08:30–00:00</span></p>
+                        <p>Samedi <span>09:00–00:00</span></p>
+                        <p>Dimanche <span>09:00–16:00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{{ include('_includes/footer.html.twig') }}
+{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/reveal.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,44 @@
+/* LA PAGE CONTACT */
+
+.form-contact_container {
+    display: flex;
+    margin: 50px auto;
+    gap: 50px;
+}
+
+.form-contact_container .col1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 50%;
+    height: fit-content;
+}
+
+.form-contact_container .col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* FORMULAIRE DE CONTACT */
+
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-contact .row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-contact .row label {
+    font-weight: bold;
+}
+
+.bloc-input {
+    padding: 15px;
+}

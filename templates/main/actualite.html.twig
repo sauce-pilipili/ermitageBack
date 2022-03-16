@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block title %}L'Ermitage Cauderan{% endblock %}
+{% block body %}
+    {{ include('_includes/navigation.html.twig') }}
+    <section class="blog_container container-large">
+        <div class="title-left_container">
+            <h1>Les actualités</h1>
+            <div class="blog-filter-container">
+                <div><a href="">Tout</a></div>
+                <div><a href="">Restaurant</a></div>
+                <div><a href="">Work café</a></div>
+                <div><a href="">Bar tapas</a></div>
+                <div><a href="">Evenement</a></div>
+            </div>
+        </div>
+
+        <div class="list-article_container">
+            <div class="card-white-2">
+                <div class="row-1">
+                    <img src="img/work-cafe-small.jpg" alt="">
+                </div>
+                <div class="row-left">
+                    <h3>Titre</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius lobortis sodales.</p>
+                    <a href="article.html">En savoir plus</a>
+                </div>
+            </div>
+            <div class="card-white-2">
+                <div class="row-1">
+                    <img src="img/work-cafe-small.jpg" alt="">
+                </div>
+                <div class="row-left">
+                    <h3>Titre</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius lobortis sodales.</p>
+                    <a href="">En savoir plus</a>
+                </div>
+            </div>
+            <div class="card-white-2">
+                <div class="row-1">
+                    <img src="img/work-cafe-small.jpg" alt="">
+                </div>
+                <div class="row-left">
+                    <h3>Titre</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius lobortis sodales.</p>
+                    <a href="">En savoir plus</a>
+                </div>
+            </div>
+            <div class="card-white-2">
+                <div class="row-1">
+                    <img src="img/work-cafe-small.jpg" alt="">
+                </div>
+                <div class="row-left">
+                    <h3>Titre</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius lobortis sodales.</p>
+                    <a href="">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ include('_includes/footer.html.twig') }}
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/blog.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}

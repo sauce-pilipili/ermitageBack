@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'Ermitage Cauderan{% endblock %}
+
+{% block body %}
+    {{ include('_includes/navigation.html.twig') }}
+
+    <section class="full-img_container">
+        <img src="img/work-cafe.jpg" alt="">
+        <div class="full-img_container_title container-medium">
+            <h1>Work Café</h1>
+            <h2>Un espace de travail et de détente</h2>
+        </div>
+    </section>
+
+    <div class="full-img_container_intro container-medium">
+        <p>L’Ermitage Cauderan a mis un soin tout particulier à installer son espace “cave”. Tables de type bistro, fauteuils confortables, Wi Fi, prises pour charger vos appareils. Une ambiance conviviale pour ceux qui travaillent, mais aussi pour les rendez-vous professionnels ou tout simplement pour votre café du matin, avec le journal bien entendu!</p>
+    </div>
+
+    <section class="bloc-left_container container-large">
+        <div class="col-left-img">
+            <img src="img/espace-travail.jpg" alt="">
+        </div>
+        <div class="col">
+            <h2>Work café : Un espace pour travailler à Bordeaux</h2>
+            <p>La “cave” de L’Ermitage Cauderan peut être un espace de travail singulier, sa bibliothèque et ses fauteuils confortables sont pensés pour rendre l’endroit cosy. Nous avons prévu le Wifi et des prises pour brancher votre ordinateur, le télétravail en sortant de chez soi, dans une atmosphère différente.</p>
+        </div>
+    </section>
+
+    <section class="bloc-right_container container-large">
+        <div class="col">
+            <h2>Espace de détente</h2>
+            <p>La terrasse, la pergola ou la cave à L’ermitage Cauderan sont des espaces conviviaux. Nous avons apporté un soin particulier à créer une ambiance de détente dans laquelle vous pourrez vous retrouver pour préparer vos rendez-vous ; mais aussi plus simplement pour lire le journal du matin avec un café et un croissant ou un jus d’orange pressé. Vous voulez juste boire une boisson fraîche sur la terrasse avec les beaux jours dans l’après midi ou vous réconforter avec un chocolat chaud en hiver ? Bienvenue, nous vous attendons avec plaisir…</p>
+        </div>
+        <div class="col-img">
+            <img src="img/espace-detente.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="bloc-left_container container-large">
+        <div class="col-left-img">
+            <img src="img/cave-vins.jpg" alt="">
+        </div>
+        <div class="col">
+            <h2>Work café, le bistro</h2>
+            <p>Le nouvel espace “cave” de L’Ermitage Cauderan sera disponible pour un déjeuner sur le pouce, un soin particulier à la rapidité si vous êtes pressés… N’oubliez pas de nous préciser votre temps de pause, nous vous guiderons au mieux dans la carte afin de respecter votre horaire et nous serons particulièrement vigilants sur le timing. En revanche, nous ne ferons l’impasse ni sur le sourire, ni sur le soin que notre équipe de cuisine aura à préparer votre assiette, ni sur le service attentionné …</p>
+        </div>
+    </section>
+
+
+    <section class="more-services_container">
+        <div class="more-services_container_title">
+            <h2>Découvrez nos autres services</h2>
+        </div>
+        <div class="card-grey_container container-large">
+            <div class="card-white-2">
+                <a href="restaurant.html">
+                    <div class="row-1">
+                        <img src="img/restauraut-small.jpg" alt="">
+                    </div>
+                    <div class="row-2">
+                        <h3>Le restaurant</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="card-white-2">
+                <a href="bar-tapas.html">
+                    <div class="row-1">
+                        <img src="img/bar-tapas-small.jpg" alt="">
+                    </div>
+                    <div class="row-2">
+                        <h3>Bar à tapas</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="card-white-2">
+                <a href="a-emporter.html">
+                    <div class="row-1">
+                        <img src="img/restaurant-a-emporter-small.jpg" alt="">
+                    </div>
+                    <div class="row-2">
+                        <h3>À emporter</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    {{ include('_includes/footer.html.twig') }}
+{% endblock %}
+{% block stylesheets %}
+
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}

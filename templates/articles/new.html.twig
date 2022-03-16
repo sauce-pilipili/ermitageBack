@@ -1,0 +1,38 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block title %}ERMITAGE{% endblock %}
+{% block body %}
+    {{ include('_includes/backOffice/_navigation.html.twig') }}
+    <section class="section-content">
+        <div class="content">
+            <div class="content-intro">
+                <div class="content-intro_row">
+                    <a href="{{ path('app_categories_index') }}">Les articles</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="5.953" height="10.413" viewBox="0 0 5.953 10.413">
+                        <path id="Icon_ionic-ios-arrow-back" data-name="Icon ionic-ios-arrow-back" d="M15.409,11.4l-3.94-3.937a.744.744,0,1,1,1.054-1.051l4.464,4.461a.743.743,0,0,1,.022,1.026l-4.482,4.492a.744.744,0,0,1-1.054-1.051Z" transform="translate(-11.251 -6.194)"/>
+                    </svg>
+                    <p>Ajout d'un article</p>
+                </div>
+                <div class="content-intro_row">
+                    <a href="{{ path('app_categories_index') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
+                            <g id="Icon_feather-arrow-left-circle" data-name="Icon feather-arrow-left-circle" transform="translate(-1.5 -1.5)">
+                                <path id="Tracé_385" data-name="Tracé 385" d="M33,18A15,15,0,1,1,18,3,15,15,0,0,1,33,18Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                                <path id="Tracé_386" data-name="Tracé 386" d="M18,12l-6,6,6,6" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                                <path id="Tracé_387" data-name="Tracé 387" d="M24,18H12" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                            </g>
+                        </svg>
+                        <h1>Ajout d’un article</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="content-form">
+                <div class="form">
+                  {{ include('articles/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('backOffice/js/imagePreview.js') }}"></script>
+{% endblock %}

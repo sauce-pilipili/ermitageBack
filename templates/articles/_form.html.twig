@@ -1,0 +1,124 @@
+{{ form_start(form, {'attr':{'class':'form'}}) }}
+<div class="row">
+    <label class="label" for="titre">
+        <h2>Titre de l'article</h2>
+        <span>Maximum 80 caractères</span>
+    </label>
+    {{ form_widget(form.title) }}
+    {# <input class="input" type="text" name="titre" id="titre" placeholder="Écrivez le titre de l’article"> #}
+</div>
+<div class="row">
+    <label class="label" for="slug">
+        <h2>Slug</h2>
+        <span>Pas de caractère spéciaux, de chiffres et de majuscules</span>
+    </label>
+    {{ form_widget(form.slug) }}
+    {# <input class="input" type="text" name="slug" id="slug" placeholder="Écrivez le slug"> #}
+</div>
+<div class="row">
+    <label class="label" for="meta-desc">
+        <h2>Meta-description</h2>
+        <span>Maximum 156 caractères</span>
+    </label>
+    {{ form_widget(form.metaDescription) }}
+    {# <input class="input" type="text" name="meta-desc" id="meta-desc" placeholder="Description pour le référencement"> #}
+</div>
+<div class="row">
+    <label class="label" for="contenu">
+        <h2>Contenu de l’article</h2>
+        <span>Maximum 500 caractères</span>
+    </label>
+    {{ form_widget(form.content) }}
+    {# <textarea name="contenu" id="contenu" cols="30" rows="10">Votre texte</textarea> #}
+</div>
+
+
+<div class="row ">
+    <label class="label" for="image">
+        <h2>Image mise en avant</h2>
+    </label>
+    <div class="upload-1">
+        {{ form_row(form.imageEnAvant,{'attr': {'class': 'inputfile', 'onchange':"handleFilesAvant(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+        <div class="preview-image">
+            <label for="upload">
+                <span id="previewAvant">
+                    {% if article.imageEnAvant != null %}
+                        {% if app.request.attributes.get('_route') == 'articles_edit' %}
+                            <img class="image-preview" src="{{ asset('/uploads/'~article.imageEnAvant) }}" alt="" style="width: 350px">
+                        {% endif %}
+                    {% endif %}
+                </span>
+            </label>
+        </div>
+
+        <span id="file-select" class="bloc-inputfile">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24"><path
+                    xmlns="http://www.w3.org/2000/svg"
+                    d="M12 4C12.5523 4 13 4.44772 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44772 11.4477 4 12 4Z"
+                    fill="#0D0D0D"></path></svg>
+     {% if app.request.attributes.get('_route') == 'app_articles_new' %}Ajouter une photo
+     {% endif %}{% if app.request.attributes.get('_route') == 'app_articles_edit' %}Modifier la photo {% endif %}
+        </span>
+
+    </div>
+
+
+{#    <input type="file" id="image" name="image" accept="image/png, image/jpeg" class="inputfile">#}
+{#    <label class="bloc-inputfile" for="image">#}
+{#        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24">#}
+{#            <path xmlns="http://www.w3.org/2000/svg"#}
+{#                  d="M12 4C12.5523 4 13 4.44772 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44772 11.4477 4 12 4Z"#}
+{#                  fill="#0D0D0D"></path>#}
+{#        </svg>#}
+{#        <span>Ajouter une image</span>#}
+{#    </label>#}
+</div>
+
+<div class="row">
+    <label class="label" for="alt">
+        <h2>Légende de la photo</h2>
+    </label>
+    {{ form_widget(form.legendePhotoEnAvant) }}
+</div>
+
+
+<button class="bouton-1"><span>Enregristrer</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14">
+        <path id="chevron-down"
+              d="M.293,7.707a1,1,0,0,0,1.414,0L7,2.414l5.293,5.293a1,1,0,0,0,1.414-1.414l-6-6a1,1,0,0,0-1.414,0l-6,6A1,1,0,0,0,.293,7.707Z"
+              transform="translate(8) rotate(90)"/>
+    </svg>
+</button>
+
+{{ form_end(form) }}
+
+<script>
+    $('#file-select').click(function () {
+        $('.upload-1 input').click();
+    });
+
+    function handleFilesAvant(files,) {
+        var imageType = /^image\//;
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            if (!imageType.test(file.type)) {
+                alert("veuillez sélectionner une image");
+            } else {
+                if (i == 0) {
+                    previewAvant.innerHTML = '';
+                }
+                var img = document.createElement("img");
+                img.classList.add("image-preview");
+                img.file = file;
+                previewAvant.appendChild(img);
+                var reader = new FileReader();
+                reader.onload = (function (aImg) {
+                    return function (e) {
+                        aImg.src = e.target.result;
+                    };
+                })(img);
+                reader.readAsDataURL(file);
+            }
+        }
+    }
+</script>

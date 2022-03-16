@@ -1,0 +1,92 @@
+/* LA CARTE */
+
+.card-menu_container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.card-menu_nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-menu_line {
+    height: 2px;
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+.suggestion_container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-list .item1,
+.menu-list .item2 {
+    display: table-cell;
+    white-space: nowrap;
+    width: 1%;
+}
+
+.menu-list .item1 {
+    padding-right: 5px;
+}
+
+.menu-list .item2 {
+    padding-left: 5px;
+}
+
+.menu-list .line {
+    border-bottom: 1px dotted;
+    display: table-cell;
+    width: 98%;
+}
+
+.menu-list .price {
+    white-space: nowrap;
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.menu-list .cat {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+.list-menu_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-menu_title {
+    display: flex;
+    align-items: center;
+}
+
+.list-menu_card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -15%;
+    height: 100px;
+}
+
+.list-menu_img {
+    z-index: 1;
+}
+
+.bloc-flex {
+    display: flex;
+    gap: 20px;
+}
+
+.bloc-flex .card-white {
+    width: 100%;
+}

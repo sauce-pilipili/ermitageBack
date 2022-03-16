@@ -1,0 +1,156 @@
+/* MAIN */
+
+main {
+    display: flex;
+    align-items: center;
+    padding-top: 98px;
+    gap: 50px;
+    background-image: url(../img/test-deco.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    position: relative;
+}
+
+main .col-1 img {
+    width: 100%;
+}
+
+main .col-2 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+main .col-2 p {
+    font-size: 1.5rem;
+}
+
+main .col-2 h1 {
+    font-size: 5.625rem;
+    line-height: 6rem;
+}
+
+/* SECTION QUI SOMMES-NOUS */
+
+.about_container {
+    background-image: url('../img/fond.jpg');
+    margin-top: -10%;
+}
+
+.about_container .row {
+    margin: auto;
+    padding: 200px 0;
+    display: flex;
+    align-items: center;
+}
+
+.about_container .row .col-1,
+.about_container .row .col-2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.about_container .row .col-1 h2,
+.about_container .row .col-1 p {
+    color: var(--color-white);
+}
+
+.about_container .row .col-1 {
+    gap: 15px;
+}
+
+/* SECTION LA CARTE + SERVICES */
+
+.card_container {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.card_container_intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    gap: 40px;
+}
+
+.card_container_intro p {
+    text-align: center;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+}
+
+/* SECTION GROUPE */
+
+.group_container {
+    margin: 100px 0 100px auto;
+    display: flex;
+    gap: 70px;
+}
+
+.group_container .col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    justify-content: center;
+}
+
+/* SECTION DECORATION BG */
+
+.decoration_container img {
+    width: 100%;
+}
+
+/* SECTION AVIS */
+
+.opinion_container {
+    display: flex;
+    margin: 250px 0 250px auto;
+    background-color: var(--second-color);
+    align-items: center;
+}
+
+.opinion_container .col-1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 50px;
+    gap: 20px;
+    width: 50%;
+}
+
+.opinion_container .col-1 p {
+    color: var(--color-white);
+}
+
+.opinion_container .col-1 p:first-child {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.opinion_container .col-2 img {
+    margin: -200px 0;
+    width: 100%;
+}
+
+/* SECTION CONTACT ET HORAIRES */
+
+.contact_container {
+    background-image: url(../img/fond-2.jpg);
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-top: -22%;
+    padding: 200px 0;
+}

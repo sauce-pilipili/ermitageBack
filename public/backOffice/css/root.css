@@ -1,0 +1,52 @@
+:root{
+    --main-color: #efba46;
+    --second-color: #303030;
+    --color-text: #000000;
+    --color-white: #FFFFFF;
+    --shadow: 5px 5px 30px #4a4a4a10;
+    --form: #D1D1D1;
+    --bg: #F2F2F2;
+    --font-title: 'Catamaran', sans-serif;
+    --font-text: 'Montserrat', sans-serif;
+    --size-h1: 3rem;
+    --size-h2: 1.5rem;
+    --size-h3: 1.8rem;
+    --size-h4: 1.4rem;
+    --size-h5: 1.3rem;
+    --size-text: 1rem;
+}
+
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-family: var(--font-text);
+}
+
+p {
+    font-family: var(--font-text);
+    color: var(--color-text);
+}
+
+input, label {
+    font-family: var(--font-text);
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    font-family: var(--font-title);
+    font-size: var(--size-h1);
+}
+
+h2 {
+    font-family: var(--font-title);
+    font-size: var(--size-h2);
+}
