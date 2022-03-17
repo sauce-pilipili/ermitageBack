@@ -21,6 +21,7 @@ class CategoriesType extends AbstractType
                 'label'=>false,
             ])
             ->add('parent',EntityType::class,[
+                'required'=>false,
                 'class'=>Categories::class,
                 'query_builder'=> function (EntityRepository $er){
                 return $er->createQueryBuilder('c')

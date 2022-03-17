@@ -48,14 +48,12 @@ class ArticlesController extends AbstractController
             $article->setCreatedDate(new \DateTime('now'));
             $article->setCategorie($categoriesRepository->find($id));
             $articlesRepository->add($article);
-            return $this->render('categories/index.html.twig', [
-                'articles'=>$articlesRepository->findAll(),
-                'categories' => $categoriesRepository->findAll(),
-            ]);
+
+            return $this->redirectToRoute('app_categories_index');
         }
-        return $this->renderForm('articles/new.html.twig', [
+        return $this->render('articles/new.html.twig', [
             'article' => $article,
-            'form' => $form,
+            'form' => $form->createView(),
         ]);
     }
 
@@ -72,7 +70,7 @@ class ArticlesController extends AbstractController
     /**
      * @Route("/{id}/edit", name="app_articles_edit", methods={"GET", "POST"})
      */
-    public function editarticles(Request $request, Articles $article, ArticlesRepository $articlesRepository): Response
+    public function editarticles(Request $request, Articles $article, ArticlesRepository $articlesRepository,CategoriesRepository $categoriesRepository): Response
     {
         $form = $this->createForm(ArticlesType::class, $article);
         $form->handleRequest($request);
@@ -88,7 +86,7 @@ class ArticlesController extends AbstractController
                 $article->setImageEnAvant($fichier);
             }
             $articlesRepository->add($article);
-            return $this->redirectToRoute('app_articles_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_categories_index');
         }
 
         return $this->renderForm('articles/edit.html.twig', [
@@ -100,13 +98,13 @@ class ArticlesController extends AbstractController
     /**
      * @Route("/{id}", name="app_articles_delete", methods={"POST"})
      */
-    public function deletearticles(Request $request, Articles $article, ArticlesRepository $articlesRepository): Response
+    public function deletearticles(Request $request, Articles $article, ArticlesRepository $articlesRepository, CategoriesRepository $categoriesRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$article->getId(), $request->request->get('_token'))) {
             $articlesRepository->remove($article);
         }
 
-        return $this->redirectToRoute('app_articles_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_categories_index');
     }
 
 

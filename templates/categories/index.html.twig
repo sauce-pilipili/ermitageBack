@@ -24,16 +24,37 @@
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script>
         editCategorie();
         deleteCategorie();
         let ajoutCategorie = document.getElementById("new")
         let div = document.getElementById("categorieForm")
-
         ajoutCategorie.addEventListener('click', (e) => {
             e.preventDefault();
             $.ajax({
-                url: "http://127.0.0.1:8000/admin/categories/new",
+                url: "http://127.0.0.1:8000/categories/new",
                 success: function (data) {
                     // mise a jour formulaire
                     remplirmodal(data)
@@ -50,12 +71,13 @@
             formCategorie.addEventListener('submit', function (e) {
                 e.preventDefault();
                 $.ajax({
-                    url: "http://127.0.0.1:8000/admin/categories/new",
+                    url: "http://127.0.0.1:8000/categories/new",
                     type: 'POST',
                     processData: false,
                     contentType: false,
                     data: new FormData(e.target),
                     success: function (data) {
+                        console.log(data.log , data.form)
                         document.getElementById("bodyList").innerHTML = data.content
                         editCategorie();
                         deleteCategorie();
@@ -70,7 +92,7 @@
             editCategorie.forEach((editCategorie) => {
                 editCategorie.addEventListener('click', () => {
                     $.ajax({
-                        url: 'http://127.0.0.1:8000/admin/categories/edit/' + editCategorie.value,
+                        url: 'http://127.0.0.1:8000/categories/edit/' + editCategorie.value,
                         success: function (data) {
                             remplirmodal(data)
                             editSendCategorie(editCategorie.value)
@@ -86,7 +108,7 @@
                 deleteC.addEventListener('click', () => {
                     console.log(deleteC.value)
                     $.ajax({
-                        url: 'http://127.0.0.1:8000/admin/categories/delete/' + deleteC.value,
+                        url: 'http://127.0.0.1:8000/categories/delete/' + deleteC.value,
                         type: 'POST',
                         success: function (data) {
                             document.getElementById("bodyList").innerHTML = data.content
@@ -105,12 +127,13 @@
             formCategorie.addEventListener('submit', function (e) {
                 e.preventDefault();
                 $.ajax({
-                    url: "http://127.0.0.1:8000/admin/categories/edit/" + id,
+                    url: "http://127.0.0.1:8000/categories/edit/" + id,
                     type: 'POST',
                     processData: false,
                     contentType: false,
                     data: new FormData(e.target),
                     success: function (data) {
+
                         document.getElementById("bodyList").innerHTML = data.content
                         editCategorie();
                         deleteCategorie();

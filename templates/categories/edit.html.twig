@@ -1,12 +1,8 @@
-{% extends 'baseAdmin.html.twig' %}
 
-{% block title %}New Categories{% endblock %}
-
-{% block body %}
     <h1>edit new Categories</h1>
     {{ form_start(form, {'attr':{'id':'editcategorie'}}) }}
     {{ form_widget(form) }}
     <button  id="categorieSubmit"class="btn">{{ button_label|default('Enregistrer') }}</button>
     {{ form_end(form) }}
 
-{% endblock %}
+
